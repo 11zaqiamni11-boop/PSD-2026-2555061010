@@ -12,6 +12,9 @@ Operasi yang dilakukan meliputi penambahan data menggunakan append, penelusuran 
 Judul program
 
 C. Source Code
+<img width="1902" height="1018" alt="image" src="https://github.com/user-attachments/assets/59e2ecc3-df5c-4a88-93b5-f336ecf772d0" />
+<img width="1900" height="990" alt="image" src="https://github.com/user-attachments/assets/6a57c508-7e5c-459e-ba39-76f6a75282e5" />
+
 Penjelasan kode per baris:
 
 1.Membuat fungsi menu()
@@ -131,6 +134,9 @@ Penjelasan kode per baris:
 58.Entry point (if __name__ == "__main__":), agar program hanya berjalan saat file dijalankan langsung, dan jika diimport ke file lain program tidak otomatis berjalan.
 
 D. Output Program
+<img width="1382" height="645" alt="image" src="https://github.com/user-attachments/assets/a0e7b1fa-1215-48a0-8cb6-6a14d923d613" />
+<img width="1141" height="440" alt="image" src="https://github.com/user-attachments/assets/33fd0721-d72a-48e0-bf8d-a936127c2147" />
+
 Penjelasan Output: Program akan langsung menampilkan menu saat dijalankan dan meminta user untuk menginputkan pilihan menu yang diinginkan. 
 Saat user memilih menu 1, program meminta user untuk menginputkan keterangan pengeluaran yang diisi “makan siang” dan menginputkan nominal pengeluaran yang diiisi 50000 oleh user.
 Selanjutnya, program akan melakukan perulangan dengan menampilkan menu. Selanjutnya, user memilih menu 1 lagi dengan menginputkan bensin dengan nominalnya yang berjumlah 20000. 
@@ -139,7 +145,3 @@ Lalu, program akan kembali ke menu dan user menginputkan menu 3. Program akan me
 User menginputkan keterangan baru, yaitu isi bensin motor. Lalu, user mengedit jumlah nominal isi bensin motor menjadi 25000.
 Selanjutnya, user menginputkan menu 2 untuk menampilkan kembali data catatan pengeluaran setelah melakukan perubahan dan program pun menampilkan catatan pengeluaran yang sudah diupdate.
 Selanjutnya, user memilih menu 4 dan program telah selesai dijalankan.
-
-<img width="1902" height="1018" alt="image" src="https://github.com/user-attachments/assets/59e2ecc3-df5c-4a88-93b5-f336ecf772d0" />
-<img width="1900" height="990" alt="image" src="https://github.com/user-attachments/assets/6a57c508-7e5c-459e-ba39-76f6a75282e5" />
-
