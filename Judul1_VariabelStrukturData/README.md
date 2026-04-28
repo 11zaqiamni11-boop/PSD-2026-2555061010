@@ -146,4 +146,4 @@ User menginputkan keterangan baru, yaitu isi bensin motor. Lalu, user mengedit j
 Selanjutnya, user menginputkan menu 2 untuk menampilkan kembali data catatan pengeluaran setelah melakukan perubahan dan program pun menampilkan catatan pengeluaran yang sudah diupdate.
 Selanjutnya, user memilih menu 4 dan program telah selesai dijalankan.
 
-E. Link Youtube
+E. Link Youtube https://youtu.be/Qx3nrUPafjg
