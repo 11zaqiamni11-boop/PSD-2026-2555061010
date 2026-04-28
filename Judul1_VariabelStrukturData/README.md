@@ -145,3 +145,5 @@ Lalu, program akan kembali ke menu dan user menginputkan menu 3. Program akan me
 User menginputkan keterangan baru, yaitu isi bensin motor. Lalu, user mengedit jumlah nominal isi bensin motor menjadi 25000.
 Selanjutnya, user menginputkan menu 2 untuk menampilkan kembali data catatan pengeluaran setelah melakukan perubahan dan program pun menampilkan catatan pengeluaran yang sudah diupdate.
 Selanjutnya, user memilih menu 4 dan program telah selesai dijalankan.
+
+E. Link Youtube
