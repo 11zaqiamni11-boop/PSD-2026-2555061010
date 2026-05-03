@@ -17,7 +17,7 @@ def main():
     arr = []
     print("Masukkan rincian struk:")
     for i in range(n):
-        print(f"\n--- Struk ke-{i+1} ---")
+        print(f"\n Struk ke-{i+1} ")
         nama = input("Keterangan/Nama Struk (misal: Laundry, Makan): ")
         while True:
             try:
