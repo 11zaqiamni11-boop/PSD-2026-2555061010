@@ -5,8 +5,7 @@ B. Deskripsi Singkat
 Program tersebut berfungsi sebagai sistem sederhana untuk mencatat dan merapikan tumpukan struk atau nota berdasarkan tanggal transaksinya menggunakan algoritma Insertion Sort. Pengguna pertama-tama menentukan jumlah struk yang ingin dicatat, kemudian memasukkan nama/keterangan struk beserta angka tanggal transaksinya. Program dilengkapi dengan validasi input (penanganan error) untuk memastikan pengguna memasukkan format angka pada input yang membutuhkan tipe data integer. Struktur data yang digunakan dalam program ini adalah list 1 dimensi yang berisi elemen berupa dictionary (kamus). Setiap elemen dictionary tersebut menyimpan pasangan key-value untuk keterangan nama struk dan jumlah nominal tanggalnya. Operasi yang dilakukan meliputi penambahan data menggunakan append, penelusuran dan pencetakan data menggunakan perulangan for, serta pembandingan dan pergeseran data antar indeks di dalam list untuk menghasilkan urutan tanggal dari yang terkecil hingga terbesar.
 
 C. Source Code
-<img width="1910" height="617" alt="image" src="https://github.com/user-attachments/assets/561b4fba-6170-48f7-8f20-96841d6283a4" />
-<img width="1919" height="420" alt="image" src="https://github.com/user-attachments/assets/6a5948a6-a502-49cc-968e-2f021844e226" />
+
 
 Penjelasan kode per baris:
 
@@ -17,43 +16,43 @@ Penjelasan kode per baris:
 4. temp = arr[i] Menyimpan elemen list pada indeks ke-i ke dalam variabel sementara bernama temp. Ini adalah data struk yang sedang dicarikan posisinya.
 5. j = i - 1 Membuat variabel j untuk menunjuk ke indeks elemen yang berada tepat di sebelah kiri temp.
 6. while j >= 0 and arr[j]['tanggal'] > temp['tanggal']: Memulai perulangan bersyarat. Looping berjalan selama masih ada elemen di sebelah kiri (j >= 0) DAN nilai tanggal dari elemen di sebelah kiri tersebut lebih besar dari nilai tanggal temp.
-8. arr[j + 1] = arr[j] Jika kondisi terpenuhi, elemen di sebelah kiri yang lebih besar itu digeser satu posisi ke kanan untuk menyediakan ruang kosong.
-9. j -= 1 Mengurangi nilai j dengan 1 agar program mengecek elemen yang posisinya lebih ke kiri lagi pada perulangan while berikutnya.
-10. arr[j + 1] = temp Menyisipkan data yang ada di variabel temp ke dalam ruang kosong (j + 1) yang sudah ditemukan setelah perulangan while berhenti.
-11. def main(): Mendefinisikan fungsi main yang akan menjadi alur utama berjalannya program.
-12. try: Membuka blok error handling untuk menangkap potensi error saat pengguna memasukkan data awal.
-13. n = int(input("Masukkan jumlah tumpukan struk/nota: ")) Meminta pengguna memasukkan jumlah struk, mengonversinya menjadi angka bulat (integer), dan menyimpannya di variabel n.
-14. except ValueError: Blok penangkap error yang aktif jika pengguna memasukkan data selain angka (misal huruf/simbol).
-15. print("Input tidak valid!") Mencetak pesan kesalahan ke layar karena input bukan angka.
-16. return Menghentikan secara langsung fungsi main agar program tidak berlanjut dengan data yang salah.
-17. arr = [] Mendeklarasikan sebuah list kosong bernama arr untuk menyimpan semua rincian struk.
-18. print("Masukkan rincian struk:") Mencetak instruksi pengisian data ke layar.
-19. for i in range(n): Melakukan perulangan sebanyak n kali untuk mengambil rincian data setiap struk.
-20. print(f"\n--- Struk ke-{i+1} ---") Mencetak penanda urutan struk (misal: "Struk ke-1"). Indeks ditambah 1 karena perulangan Python dimulai dari 0.
-21. nama = input("Keterangan/Nama Struk (misal: Laundry, Makan): ") Meminta input teks dari pengguna untuk keterangan struk dan menyimpannya di variabel nama.
-22. while True: Membuka perulangan tak terbatas agar program bisa terus meminta input tanggal jika pengguna salah memasukkan format.
-23. try: Membuka blok error handling khusus untuk validasi input tanggal.
-24. tanggal = int(input("Tanggal transaksi (1-31): ")) Meminta input tanggal, memaksanya menjadi integer, dan menyimpannya di variabel tanggal.
-25. arr.append({'nama': nama, 'tanggal': tanggal}) Menggabungkan variabel nama dan tanggal menjadi satu dictionary, lalu menambahkannya ke dalam list arr.
-26. break Menghentikan perulangan while True karena data tanggal sudah berhasil dan valid dimasukkan.
-27. except ValueError: Menangkap error jika pengguna mengetikkan selain angka pada input tanggal.
-28. print("Input tidak valid, silakan masukkan angka untuk tanggal!") Mencetak peringatan. Setelah ini, program otomatis mengulang ke baris 21 untuk menanyakan tanggal kembali.
-29. print("Kondisi Tumpukan Struk SEBELUM diurutkan:") Mencetak teks judul untuk daftar struk acak.
-30. **`    for struk in arr:`**
+7. arr[j + 1] = arr[j] Jika kondisi terpenuhi, elemen di sebelah kiri yang lebih besar itu digeser satu posisi ke kanan untuk menyediakan ruang kosong.
+8. j -= 1 Mengurangi nilai j dengan 1 agar program mengecek elemen yang posisinya lebih ke kiri lagi pada perulangan while berikutnya.
+9. arr[j + 1] = temp Menyisipkan data yang ada di variabel temp ke dalam ruang kosong (j + 1) yang sudah ditemukan setelah perulangan while berhenti.
+10. def main(): Mendefinisikan fungsi main yang akan menjadi alur utama berjalannya program.
+11. try: Membuka blok error handling untuk menangkap potensi error saat pengguna memasukkan data awal.
+12. n = int(input("Masukkan jumlah tumpukan struk/nota: ")) Meminta pengguna memasukkan jumlah struk, mengonversinya menjadi angka bulat (integer), dan menyimpannya di variabel n.
+13. except ValueError: Blok penangkap error yang aktif jika pengguna memasukkan data selain angka (misal huruf/simbol).
+14. print("Input tidak valid!") Mencetak pesan kesalahan ke layar karena input bukan angka.
+15. return Menghentikan secara langsung fungsi main agar program tidak berlanjut dengan data yang salah.
+16. arr = [] Mendeklarasikan sebuah list kosong bernama arr untuk menyimpan semua rincian struk.
+17. print("Masukkan rincian struk:") Mencetak instruksi pengisian data ke layar.
+18. for i in range(n): Melakukan perulangan sebanyak n kali untuk mengambil rincian data setiap struk.
+19. print(f"\n Struk ke-{i+1} ") Mencetak penanda urutan struk (misal: "Struk ke-1"). Indeks ditambah 1 karena perulangan Python dimulai dari 0.
+20. nama = input("Keterangan/Nama Struk (misal: Laundry, Makan): ") Meminta input teks dari pengguna untuk keterangan struk dan menyimpannya di variabel nama.
+21. while True: Membuka perulangan tak terbatas agar program bisa terus meminta input tanggal jika pengguna salah memasukkan format.
+22. try: Membuka blok error handling khusus untuk validasi input tanggal.
+23. tanggal = int(input("Tanggal transaksi (1-31): ")) Meminta input tanggal, memaksanya menjadi integer, dan menyimpannya di variabel tanggal.
+24. arr.append({'nama': nama, 'tanggal': tanggal}) Menggabungkan variabel nama dan tanggal menjadi satu dictionary, lalu menambahkannya ke dalam list arr.
+25. break Menghentikan perulangan while True karena data tanggal sudah berhasil dan valid dimasukkan.
+26. except ValueError: Menangkap error jika pengguna mengetikkan selain angka pada input tanggal.
+27. print("Input tidak valid, silakan masukkan angka untuk tanggal!") Mencetak peringatan. Setelah ini, program otomatis mengulang ke baris 21 untuk menanyakan tanggal kembali.
+28. print("Kondisi Tumpukan Struk SEBELUM diurutkan:") Mencetak teks judul untuk daftar struk acak.
+29. **`    for struk in arr:`**
     Melakukan iterasi untuk membaca setiap elemen *dictionary* di dalam *list* `arr`.
-31. **`        print(f"- {struk['nama']} (Tgl: {struk['tanggal']})")`**
+30. **`        print(f"- {struk['nama']} (Tgl: {struk['tanggal']})")`**
     Mencetak nama dan tanggal struk ke layar. Pada titik ini, urutannya masih acak sesuai input pengguna.
-32. **`    insertion_sort_struk(arr, n)`**
+31. **`    insertion_sort_struk(arr, n)`**
     Memanggil fungsi algoritma *Insertion Sort* dengan membawa *list* `arr` dan jumlah `n` agar diproses menjadi berurutan.
-33. **`    print("Kondisi Tumpukan Struk SETELAH diurutkan (Insertion Sort):")`**
+32. **`    print("Kondisi Tumpukan Struk SETELAH diurutkan (Insertion Sort):")`**
     Mencetak teks judul untuk daftar struk yang sudah rapi.
-34. **`    for struk in arr:`**
+33. **`    for struk in arr:`**
     Melakukan iterasi kembali pada *list* `arr`. Karena fungsi *sort* sudah dipanggil, isi *list* ini sekarang sudah berubah urutannya.
-35. **`        print(f"- {struk['nama']} (Tgl: {struk['tanggal']})")`**
+34. **`        print(f"- {struk['nama']} (Tgl: {struk['tanggal']})")`**
     Mencetak hasil akhir nama dan tanggal struk ke layar, yang kini sudah terurut dari tanggal terkecil ke terbesar.
-36. **`if __name__ == "__main__":`**
+35. **`if __name__ == "__main__":`**
     Pengkondisian untuk memastikan bahwa kode di bawahnya hanya dieksekusi jika *file* ini dijalankan secara langsung (bukan saat di-*import* oleh *file* lain).
-37. **`    main()`**
+36. **`    main()`**
     Memanggil fungsi `main()`, yang memicu seluruh alur program dari baris 10 hingga 34 untuk mulai berjalan.
 
 **D. Output Program**
