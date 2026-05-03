@@ -26,15 +26,12 @@ def main():
                 break
             except ValueError:
                 print("Input tidak valid, silakan masukkan angka untuk tanggal!")
-    print("\n=========================================")
     print("Kondisi Tumpukan Struk SEBELUM diurutkan:")
     for struk in arr:
         print(f"- {struk['nama']} (Tgl: {struk['tanggal']})")
     insertion_sort_struk(arr, n)
-    print("\n=========================================")
     print("Kondisi Tumpukan Struk SETELAH diurutkan (Insertion Sort):")
     for struk in arr:
         print(f"- {struk['nama']} (Tgl: {struk['tanggal']})")
-    print("=========================================\n")
 if __name__ == "__main__":
     main()
