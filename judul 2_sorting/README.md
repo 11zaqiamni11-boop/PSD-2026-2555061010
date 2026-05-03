@@ -5,6 +5,9 @@ PROGRAM PENGURUTAN STRUK BERDASARKAN TANGGAL TRANSAKSI MENGGUNAKAN INSERTION SOR
 Program tersebut berfungsi sebagai sistem sederhana untuk mencatat dan merapikan tumpukan struk atau nota berdasarkan tanggal transaksinya menggunakan algoritma Insertion Sort. Pengguna pertama-tama menentukan jumlah struk yang ingin dicatat, kemudian memasukkan nama/keterangan struk beserta angka tanggal transaksinya. Program dilengkapi dengan validasi input (penanganan *error*) untuk memastikan pengguna memasukkan format angka pada input yang membutuhkan tipe data *integer*. Struktur data yang digunakan dalam program ini adalah *list* 1 dimensi yang berisi elemen berupa *dictionary* (kamus). Setiap elemen *dictionary* tersebut menyimpan pasangan *key-value* untuk keterangan nama struk dan jumlah nominal tanggalnya. Operasi yang dilakukan meliputi penambahan data menggunakan *append*, penelusuran dan pencetakan data menggunakan perulangan *for*, serta pembandingan dan pergeseran data antar indeks di dalam *list* untuk menghasilkan urutan tanggal dari yang terkecil hingga terbesar.
 
 **C. Source Code**
+<img width="1910" height="617" alt="image" src="https://github.com/user-attachments/assets/561b4fba-6170-48f7-8f20-96841d6283a4" />
+<img width="1919" height="420" alt="image" src="https://github.com/user-attachments/assets/6a5948a6-a502-49cc-968e-2f021844e226" />
+
 Penjelasan kode per baris:
 1. Membuat fungsi `insertion_sort_struk(arr, n)` yang menerima parameter *list* `arr` dan jumlah elemen `n`.
 2. Perulangan `for` untuk melakukan iterasi indeks `i` dari 1 sampai batas `n`, mengasumsikan elemen pertama (indeks 0) sudah berurutan.
