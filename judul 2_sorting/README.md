@@ -10,16 +10,16 @@ Program tersebut berfungsi sebagai sistem sederhana untuk mencatat dan merapikan
 
 Penjelasan kode per baris:
 
-1. **`#PROGRAM PENGURUTAN STRUK BERDASARKAN TANGGAL TRANSAKSI MENGGUNAKAN INSERTION SORT`**
-   Merupakan baris komentar (ditandai dengan `#`) yang berisi judul program. Baris ini tidak akan dieksekusi oleh Python dan hanya berfungsi sebagai catatan.
-2. **`def insertion_sort_struk(arr, n):`**
-   Mendefinisikan fungsi bernama `insertion_sort_struk` yang membutuhkan dua parameter: `arr` (*list* data) dan `n` (jumlah data).
-3. **`    for i in range(1, n):`**
-   Memulai perulangan (*looping*) dari indeks 1 sampai batas `n`. Indeks 0 dilewati karena dianggap sudah berada di posisi yang benar.
-4. **`        temp = arr[i]`**
-   Menyimpan elemen *list* pada indeks ke-`i` ke dalam variabel sementara bernama `temp`. Ini adalah data struk yang sedang dicarikan posisinya.
-5. **`        j = i - 1`**
-   Membuat variabel `j` untuk menunjuk ke indeks elemen yang berada tepat di sebelah kiri `temp`.
+1. #PROGRAM PENGURUTAN STRUK BERDASARKAN TANGGAL TRANSAKSI MENGGUNAKAN INSERTION SORT
+   Merupakan baris komentar (ditandai dengan # ) yang berisi judul program. Baris ini tidak akan dieksekusi oleh Python dan hanya berfungsi sebagai catatan.
+2. def insertion_sort_struk(arr, n):
+   Mendefinisikan fungsi bernama insertion_sort_struk yang membutuhkan dua parameter: arr (*list* data) dan n (jumlah data).
+3. for i in range(1, n):
+   Memulai perulangan (*looping*) dari indeks 1 sampai batas n. Indeks 0 dilewati karena dianggap sudah berada di posisi yang benar.
+4. temp = arr[i]
+   Menyimpan elemen list pada indeks ke-i ke dalam variabel sementara bernama temp. Ini adalah data struk yang sedang dicarikan posisinya.
+5. j = i - 1
+   Membuat variabel j untuk menunjuk ke indeks elemen yang berada tepat di sebelah kiri temp.
 6. **`        while j >= 0 and arr[j]['tanggal'] > temp['tanggal']:`**
    Memulai perulangan bersyarat. *Looping* berjalan selama masih ada elemen di sebelah kiri (`j >= 0`) DAN nilai tanggal dari elemen di sebelah kiri tersebut lebih besar dari nilai tanggal `temp`.
 7. **`            arr[j + 1] = arr[j]`**
