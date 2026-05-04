@@ -38,22 +38,14 @@ Penjelasan kode per baris:
 26. except ValueError: Menangkap error jika pengguna mengetikkan selain angka pada input tanggal.
 27. print("Input tidak valid, silakan masukkan angka untuk tanggal!") Mencetak peringatan. Setelah ini, program otomatis mengulang ke baris 21 untuk menanyakan tanggal kembali.
 28. print("Kondisi Tumpukan Struk SEBELUM diurutkan:") Mencetak teks judul untuk daftar struk acak.
-29. **`    for struk in arr:`**
-    Melakukan iterasi untuk membaca setiap elemen *dictionary* di dalam *list* `arr`.
-30. **`        print(f"- {struk['nama']} (Tgl: {struk['tanggal']})")`**
-    Mencetak nama dan tanggal struk ke layar. Pada titik ini, urutannya masih acak sesuai input pengguna.
-31. **`    insertion_sort_struk(arr, n)`**
-    Memanggil fungsi algoritma *Insertion Sort* dengan membawa *list* `arr` dan jumlah `n` agar diproses menjadi berurutan.
-32. **`    print("Kondisi Tumpukan Struk SETELAH diurutkan (Insertion Sort):")`**
-    Mencetak teks judul untuk daftar struk yang sudah rapi.
-33. **`    for struk in arr:`**
-    Melakukan iterasi kembali pada *list* `arr`. Karena fungsi *sort* sudah dipanggil, isi *list* ini sekarang sudah berubah urutannya.
-34. **`        print(f"- {struk['nama']} (Tgl: {struk['tanggal']})")`**
-    Mencetak hasil akhir nama dan tanggal struk ke layar, yang kini sudah terurut dari tanggal terkecil ke terbesar.
-35. **`if __name__ == "__main__":`**
-    Pengkondisian untuk memastikan bahwa kode di bawahnya hanya dieksekusi jika *file* ini dijalankan secara langsung (bukan saat di-*import* oleh *file* lain).
-36. **`    main()`**
-    Memanggil fungsi `main()`, yang memicu seluruh alur program dari baris 10 hingga 34 untuk mulai berjalan.
-
-**D. Output Program**
-Penjelasan Output: Saat program dijalankan, sistem pertama-tama akan meminta user untuk memasukkan jumlah tumpukan struk yang ingin diproses. Misalkan user menginputkan angka 3. Program kemudian akan meminta user untuk melengkapi rincian 3 struk tersebut. Pada Struk ke-1, user memasukkan keterangan "Makan Siang" dan menginputkan tanggal transaksi bernilai 15. Pada Struk ke-2, user memasukkan keterangan "Laundry" dengan tanggal bernilai 5. Selanjutnya pada Struk ke-3, user menginputkan keterangan "Isi Bensin" dengan tanggal bernilai 10. (Jika pada saat memasukkan tanggal user tidak sengaja mengetikkan huruf, program tidak akan *crash*, melainkan memunculkan pesan peringatan dan meminta user mengulang input tanggal tersebut). Setelah ketiga data masuk, program akan langsung menampilkan "Kondisi Tumpukan Struk SEBELUM diurutkan", yang mencetak deretan struk persis sesuai riwayat input (Tgl 15, Tgl 5, dan Tgl 10). Setelah itu, algoritma *Insertion Sort* bekerja di latar belakang, membandingkan tanggal dan menyisipkan data ke posisi yang benar. Program kemudian memunculkan hasil akhirnya pada bagian "Kondisi Tumpukan Struk SETELAH diurutkan", di mana daftar struk tersebut sekarang tercetak rapi berdasarkan urutan kalender: diawali Laundry (Tgl: 5), lalu Isi Bensin (Tgl: 10), dan diakhiri Makan Siang (Tgl: 15). Setelah menampilkan hasil akhir ini, eksekusi program selesai.
+29. for struk in arr: Melakukan iterasi untuk membaca setiap elemen dictionary di dalam list arr.
+30. print(f"- {struk['nama']} (Tgl: {struk['tanggal']})") Mencetak nama dan tanggal struk ke layar. Pada titik ini, urutannya masih acak sesuai input pengguna.
+31. insertion_sort_struk(arr, n) Memanggil fungsi algoritma Insertion Sort dengan membawa list arr dan jumlah n agar diproses menjadi berurutan.
+32. print("Kondisi Tumpukan Struk SETELAH diurutkan (Insertion Sort):") Mencetak teks judul untuk daftar struk yang sudah rapi.
+33. for struk in arr: Melakukan iterasi kembali pada list arr. Karena fungsi sort sudah dipanggil, isi list ini sekarang sudah berubah urutannya.
+34. print(f"- {struk['nama']} (Tgl: {struk['tanggal']})") Mencetak hasil akhir nama dan tanggal struk ke layar, yang kini sudah terurut dari tanggal terkecil ke terbesar.
+35. if __name__ == "__main__": Pengkondisian untuk memastikan bahwa kode di bawahnya hanya dieksekusi jika file ini dijalankan secara langsung (bukan saat di-import oleh file lain).
+36. main() Memanggil fungsi main(), yang memicu seluruh alur program dari baris 10 hingga 34 untuk mulai berjalan.
+    
+D. Output Program
+Penjelasan Output: Saat program dijalankan, sistem pertama-tama akan meminta user untuk memasukkan jumlah tumpukan struk yang ingin diproses. Misalkan user menginputkan angka 3. Program kemudian akan meminta user untuk melengkapi rincian 3 struk tersebut. Pada Struk ke-1, user memasukkan keterangan "Makan Siang" dan menginputkan tanggal transaksi bernilai 15. Pada Struk ke-2, user memasukkan keterangan "Laundry" dengan tanggal bernilai 5. Selanjutnya pada Struk ke-3, user menginputkan keterangan "Isi Bensin" dengan tanggal bernilai 10. (Jika pada saat memasukkan tanggal user tidak sengaja mengetikkan huruf, program tidak akan crash, melainkan memunculkan pesan peringatan dan meminta user mengulang input tanggal tersebut). Setelah ketiga data masuk, program akan langsung menampilkan "Kondisi Tumpukan Struk SEBELUM diurutkan", yang mencetak deretan struk persis sesuai riwayat input (Tgl 15, Tgl 5, dan Tgl 10). Setelah itu, algoritma Insertion Sort bekerja di latar belakang, membandingkan tanggal dan menyisipkan data ke posisi yang benar. Program kemudian memunculkan hasil akhirnya pada bagian "Kondisi Tumpukan Struk SETELAH diurutkan", di mana daftar struk tersebut sekarang tercetak rapi berdasarkan urutan kalender: diawali Laundry (Tgl: 5), lalu Isi Bensin (Tgl: 10), dan diakhiri Makan Siang (Tgl: 15). Setelah menampilkan hasil akhir ini, eksekusi program selesai.
