@@ -5,6 +5,9 @@ B. Deskripsi Singkat
 Program tersebut berfungsi sebagai sistem verifikasi untuk mengecek apakah ID peserta sudah terdaftar dalam sistem registrasi seminar menggunakan algoritma Binary Search. Pengguna pertama-tama menentukan jumlah data ID peserta yang ingin dimasukkan ke dalam sistem. Kemudian pengguna memasukkan ID peserta secara berurutan dari yang terkecil hingga terbesar (urut menaik) karena ini merupakan syarat mutlak agar Binary Search dapat bekerja. Program dilengkapi dengan validasi input (penanganan error) menggunakan *try-except* untuk memastikan pengguna tidak memasukkan huruf/simbol saat sistem meminta tipe data integer. Struktur data yang digunakan dalam program ini adalah list 1 dimensi. Operasi yang dilakukan meliputi penambahan data menggunakan *append*, serta pencarian data dengan cara membagi list menjadi dua bagian secara berulang (menentukan indeks batas kiri, batas kanan, dan median) hingga ID target ditemukan atau hingga disimpulkan bahwa ID tersebut tidak ada dalam sistem. Program ini memiliki tingkat efisiensi pencarian $O(\log n)$.
 
 C. Source Code
+<img width="1918" height="1002" alt="image" src="https://github.com/user-attachments/assets/0a3f4a1a-7ade-47b2-b86a-7ffba28725e2" />
+<img width="1907" height="432" alt="image" src="https://github.com/user-attachments/assets/387fbc9b-72a6-4a04-92ef-b2b21f3c3ed6" />
+
 Penjelasan kode per baris:
 1. `def binary_search(arr, n, target):` : Bikin fungsi bernama `binary_search` yang minta tiga parameter masukan: `arr` (list/array datanya), `n` (jumlah datanya), dan `target` (ID yang mau dicari).
 2. `l = 0` : Deklarasi variabel `l` (left) diisi 0. Ini dipakai buat nandain batas pencarian paling kiri alias indeks pertama.
