@@ -13,8 +13,6 @@ C. Source Code
 
 Penjelasan kode per baris:
 
-Berikut adalah penjelasan lengkap kode per baris. Semua baris kosong sudah dihapus seluruhnya, tetapi nomor baris lainnya tetap dipertahankan sesuai posisi aslinya. Seluruh simbol format markdown (seperti tebal, miring, atau tanda petik kode) sudah dihilangkan total agar rapi dan tidak memunculkan karakter aneh saat disalin ke Microsoft Word.
-
 Baris 1: class StackArray: - Deklarasi pembuatan cetakan (class) bernama StackArray untuk membangun struktur data stack.
 
 Baris 2: def **init**(self, max_size=100): - Membuat fungsi inisialisasi awal (constructor) dengan parameter ukuran maksimal bawaan (default) 100.
