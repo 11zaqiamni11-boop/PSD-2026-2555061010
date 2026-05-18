@@ -149,9 +149,9 @@ D. Output Program
 <img width="1882" height="245" alt="Cuplikan layar 2026-05-18 200646" src="https://github.com/user-attachments/assets/e89bae02-3ef9-4937-8334-41641a140c6e" />
 
 Penjelasan Output:
-Saat program baru pertama kali dijalankan, layar terminal langsung menampilkan === PEMBUATAN ECOBRICK (STACK) === beserta 5 pilihan menu. Sistem akan menunggu kita memasukkan angka.
-Misalnya kita nyoba melihat isi botol sebelum diisi apa-apa dengan memilih menu 4 (Tampilkan Isi Botol). Sistem akan langsung menolak dan mencetak: "Stack kosong: Botol belum diisi." karena memang datanya masih kosong (indeks masih -1).
-Setelah itu, kita mulai beroperasi dengan benar. Kita pilih menu 1 (Masukkan Sampah), lalu mengetik "Plastik kemasan deterjen". Program merespons: "Push: Plastik kemasan deterjen berhasil dipadatkan ke dalam botol."
+Saat program baru pertama kali dijalankan, layar terminal langsung menampilkan === PEMBUATAN ECOBRICK (STACK) === beserta 5 pilihan menu. Sistem akan menunggu umtuk memasukkan angka.
+Misalnya nyoba melihat isi botol sebelum diisi apa-apa dengan memilih menu 4 (Tampilkan Isi Botol). Sistem akan langsung menolak dan mencetak: "Stack kosong: Botol belum diisi." karena memang datanya masih kosong (indeks masih -1).
+Setelah itu, baru beroperasi dengan benar. pilih menu 1 (Masukkan Sampah), lalu mengetik "Plastik kemasan deterjen". Program merespons: "Push: Plastik kemasan deterjen berhasil dipadatkan ke dalam botol."
 Lalu pilih menu 1 lagi dua kali berturut-turut buat masukian "Bungkus kopi sachet" dan "Potongan sedotan plastik".
 Untuk mastiin tumpukan teratas saat ini, kita memilih menu 3 (Cek Sampah Paling Atas). Program hanya akan melihat tanpa menghapus data, lalu mencetak: "Elemen teratas (di bawah botol): Potongan sedotan plastik".
 lalu,ternyata potongan sedotannya kurang kecil dan malah bikin botol susah padat. Jadi, harus membuangnya dengan memilih menu 2 (Keluarkan Sampah Teratas). Sistem otomatis membuang sedotan tersebut dan merespons: "Pop: Potongan sedotan plastik berhasil dikeluarkan dari botol."
