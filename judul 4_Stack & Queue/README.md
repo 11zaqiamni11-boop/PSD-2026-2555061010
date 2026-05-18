@@ -136,7 +136,11 @@ Baris 70: stack.display() - Mengeksekusi fungsi display() untuk menjabarkan semu
 Baris 71: elif pilih == 5: - Kondisi percabangan jika user memilih angka menu 5.
 
 Baris 72: print("Program selesai.") - Mencetak pesan penutup karena proses simulasi selesai dilakukan.
+
 Baris 73: else: - Kondisi alternatif sisa jika user mengetikkan angka selain dari pilihan 1 sampai 5 (misal angka 8).
+
 Baris 74: print("Pilihan tidak valid!") - Menampilkan informasi bahwa nomor menu tersebut tidak tersedia di sistem.
+
 Baris 77: if **name** == "**main**": - Sintaks pengaman di Python untuk memastikan bahwa blok kode di bawahnya hanya akan dieksekusi kalau file ini dijalankan secara langsung.
+
 Baris 78: main() - Memanggil fungsi main() untuk mentrigger jalannya seluruh sistem aplikasi dari awal.
