@@ -144,7 +144,8 @@ Baris 77: if **name** == "**main**": - Sintaks pengaman di Python untuk memastik
 Baris 78: main() - Memanggil fungsi main() untuk mentrigger jalannya seluruh sistem aplikasi dari awal.
 
 D. Output Program
-
+<img width="1793" height="908" alt="Cuplikan layar 2026-05-18 200542" src="https://github.com/user-attachments/assets/ad909211-f974-4218-b845-d4cd980307a3" />
+<img width="1782" height="907" alt="Cuplikan layar 2026-05-18 200605" src="https://github.com/user-attachments/assets/f9bb925a-e397-48b6-b30d-1260491baa85" />
 <img width="1882" height="245" alt="Cuplikan layar 2026-05-18 200646" src="https://github.com/user-attachments/assets/e89bae02-3ef9-4937-8334-41641a140c6e" />
 <img width="1782" height="907" alt="Cuplikan layar 2026-05-18 200605" src="https://github.com/user-attachments/assets/f9bb925a-e397-48b6-b30d-1260491baa85" />
 <img width="1793" height="908" alt="Cuplikan layar 2026-05-18 200542" src="https://github.com/user-attachments/assets/ad909211-f974-4218-b845-d4cd980307a3" />
