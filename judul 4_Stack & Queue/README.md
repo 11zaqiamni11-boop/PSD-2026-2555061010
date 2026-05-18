@@ -159,3 +159,4 @@ Sebagai gantinya, pilih menu 1 lagi dan memasukkan sampah baru berupa "Bungkus p
 Untuk melihat susunan akhir botol saat ini, pilih menu 4. Program akan melakukan perulangan mundur dan mencetak hasilnya dari tumpukan teratas ke dasar botol 
 Karena proses pemadatan dirasa sudah cukup untuk simulasi ini, terakhir memilih menu 5 (Keluar). Sistem akan mencetak "Program selesai." lalu perulangan while terputus dan program otomatis tertutup sepenuhnya.
 
+E. link youtube https://youtu.be/80R7f345MAY
