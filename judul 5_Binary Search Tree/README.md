@@ -8,77 +8,114 @@ Kelebihan program ini cepet bener kalau mau nge-insert data baru atau nyari bara
 
 C. Source Code Penjelasan kode per baris
 
-Baris 1: class Node: - Bikin cetakan (class) namanya Node buat nyimpen satu data tunggal di pohonnya.
-Baris 2: def **init**(self, key): - Ini constructor, semacam fungsi bawaan buat nyiapin node baru pas pertama kali dibikin, sekalian bawa parameter key alias kode barangnya.
-Baris 3: self.key = key - Nyimpen nilai kode barang yang diinput user ke dalam memori node tersebut.
-Baris 4: self.left = None - Setel cabang anak sebelah kiri jadi kosong dulu karena baru dibikin.
-Baris 5: self.right = None - Setel cabang anak sebelah kanan jadi kosong juga.
-Baris 7: class BSTDasar: - Bikin cetakan utama namanya BSTDasar buat ngebangun dan ngatur keseluruhan pohon BST-nya.
-Baris 8: def **init**(self): - Fungsi inisialisasi awal buat pohon BST.
-Baris 9: self.root = None - Setel akar pohon (root) ke kondisi kosong, tandanya pohon ini belum ada isinya sama sekali.
-Baris 11: def insert_node(self, root, key): - Bikin fungsi rekursif (fungsi yang manggil dirinya sendiri) buat nyari posisi yang pas buat nyelipin node baru.
-Baris 12: if root is None: - Ngecek, posisi cabang yang lagi dicek sekarang kosong nggak?
-Baris 13: return Node(key) - Kalau kosong, langsung bikin node baru di situ dan balikin posisinya.
-Baris 14: if key < root.key: - Ngecek apa kode barang yang mau dimasukin lebih kecil dari nilai node sekarang.
-Baris 15: root.left = self.insert_node(root.left, key) - Kalau iya, lempar ke cabang kiri dan panggil fungsinya lagi buat nyari tempat kosong di sana.
-Baris 16: elif key > root.key: - Ngecek kalau ternyata datanya lebih gede dari nilai node sekarang.
-Baris 17: root.right = self.insert_node(root.right, key) - Lempar pencariannya ke cabang sebelah kanan.
-Baris 18: return root - Balikin struktur pohon yang udah ke-update data baru.
-Baris 20: def insert(self, key): - Fungsi pemicu buat mulai proses insert data dari posisi paling atas (root).
-Baris 21: self.root = self.insert_node(self.root, key) - Eksekusi fungsi insert_node dengan titik start dari akar pohon.
-Baris 23: def search_node(self, root, key): - Fungsi rekursif buat nyari kode barang tertentu di dalam pohon.
-Baris 24: if root is None: - Kalau pencariannya udah mentok ujung tapi datanya nggak ada.
-Baris 25: return False - Balikin nilai False, tandanya barang fix nggak ada.
-Baris 26: if root.key == key: - Kalau kode barang di node pas banget sama yang lagi kita cari.
-Baris 27: return True - Balikin nilai True, tandanya barang ketemu.
-Baris 28: if key < root.key: - Kalau angka yang dicari lebih kecil dari posisi sekarang.
-Baris 29: return self.search_node(root.left, key) - Lanjutin pencarian ke cabang kiri.
-Baris 30: return self.search_node(root.right, key) - Kalau lebih gede, lanjutin pencarian nyusur ke cabang kanan.
-Baris 32: def search(self, key): - Fungsi utama pemicu buat mulai pencarian barang, start-nya dari root.
-Baris 33: return self.search_node(self.root, key) - Manggil fungsi search_node.
-Baris 35 sampai 47: def inorder, preorder, postorder - Tiga blok fungsi ini disiapin buat nge-print isi pohon dengan urutan yang beda-beda. Walaupun belum dipake di menu utama, ini sengaja disiapin buat cadangan update fitur ke depannya.
-Baris 49: def find_min(self, root): - Fungsi buat nyari kode barang paling kecil.
-Baris 50: if root is None: - Ngecek dulu, pohonnya kosong nggak?
-Baris 51: return -1 - Kalau kosong, balikin -1 aja sebagai tanda error atau datanya emang nggak ada.
-Baris 52: current = root - Mulai penelusuran dari root.
-Baris 53: while current.left is not None: - Selama cabang kirinya masih ada isinya, karena nilai paling kecil pasti posisinya mentok di kiri.
-Baris 54: current = current.left - Terus geser ke bawah lewat jalur kiri.
-Baris 55: return current.key - Kalau udah mentok, balikin angka di node terakhir itu.
-Baris 57 sampai 63: def find_max(self, root): - Ini kebalikannya find_min. Dia bakal terus nyusur ke mentok cabang paling kanan buat dapet kode barang yang angkanya paling gede.
-Baris 65: def count_nodes(self, root): - Fungsi buat ngitung ada berapa total variasi barang di sistem.
-Baris 66: if root is None: - Kalau udah mentok ujung atau kosong.
-Baris 67: return 0 - Balikin nilai 0.
-Baris 68: return 1 + self.count_nodes(root.left) + self.count_nodes(root.right) - Hitung 1 buat node ini sendiri, terus tambahin jumlah node dari cabang kiri dan kanannya pake rekursif.
-Baris 70 sampai 73: def sum_nodes(self, root): - Fungsi ini buat ngejumlahin total dari semua angka kode barang, ini juga buat cadangan fitur aja.
-Baris 75: def main(): - Buka fungsi utama main yang jadi nyawa berjalannya program.
-Baris 76: sitoserba = BSTDasar() - Bikin objek baru namanya sitoserba dari class BSTDasar. Ini bakal jadi mesin utamanya.
-Baris 77: pilih = 0 - Deklarasi variabel pilih dikasih nilai 0 dulu buat mancing biar bisa masuk ke perulangan while.
-Baris 79: while pilih != 4: - Bikin looping menu utama yang bakal muter terus selama kita belum milih menu nomor 4 atau keluar.
-Baris 80 sampai 84: print - Nge-print antarmuka menu utama SiToserba di terminal.
-Baris 86: try: - Pasang sabuk pengaman atau try-except biar kalau user typo ngetik huruf, programnya nggak langsung mati.
-Baris 87: pilih = int(input("Pilih: ")) - Minta user milih menu, terus diubah paksa jadi integer.
-Baris 88: except ValueError: - Nangkep error kalau ternyata user ngetik selain angka.
-Baris 89: print("Input tidak valid! Masukkan angka.") - Ngasih tau user kalau inputnya salah.
-Baris 90: continue - Langsung skip kode di bawahnya dan ngulang looping menu dari awal.
-Baris 92: if pilih == 1: - Logika kalau user milih menu 1 (Tambah Kode Barang).
-Baris 93: try: - Pasang pengaman lagi khusus buat input kodenya.
-Baris 94: x = int(input("Masukkan kode barang (angka): ")) - Minta user masukin angka kode barang barunya.
-Baris 95: sitoserba.insert(x) - Masukin data tadi ke dalam pohon.
-Baris 96: print(f"Kode barang x berhasil dimasukkan...") - Nge-print info kalau datanya sukses masuk.
-Baris 97 sampai 98: except ValueError - Sama kayak tadi, nangkep error kalau user masukin huruf.
-Baris 100: elif pilih == 2: - Logika kalau user milih menu 2 (Cari Kode Barang).
-Baris 102: x = int(input("Cari kode barang: ")) - Minta angka kode yang mau dicari.
-Baris 103: if sitoserba.search(x): - Jalanin fungsi search, kalau hasilnya ketemu.
-Baris 104: print("Status: Barang Ditemukan di Toko!") - Nampilin info kalau barangnya ada.
-Baris 105 sampai 106: else: - Kalau nggak ketemu, print Barang Tidak Ada.
-Baris 111: elif pilih == 3: - Logika kalau user milih menu 3 (Tampilkan Info Stok).
-Baris 112: print - Manggil find_min buat nampilin kode barang paling kecil.
-Baris 113: print - Manggil find_max buat nampilin kode barang paling gede.
-Baris 114: print - Manggil count_nodes buat nampilin ada berapa barang yang udah kedaftar.
-Baris 116: elif pilih == 4: - Logika kalau user milih menu 4 (Keluar).
-Baris 117: print("Program SiToserba selesai.") - Nampilin teks penutup.
-Baris 118 sampai 119: else: - Kalau user iseng masukin angka di luar menu, bakal nampil Pilihan tidak valid.
-Baris 121 sampai 122: if **name** == "**main**": - Ini sintaks wajib di Python biar fungsi main cuma jalan kalau file ini dieksekusi langsung.
+1. class Node ini cetakan awal buat bikin kotak data di tree.
+2. def init self key ini fungsi bawaan buat ngatur nilai awal pas node baru dibuat.
+3. self key sama dengan key ini buat nyimpen angka kode barang ke dalam kotaknya.
+4. self left sama dengan None ini nyiapin dahan sebelah kiri yang awalnya dibikin kosong.
+5. self right sama dengan None ini nyiapin dahan sebelah kanan yang awalnya juga kosong.
+6. class BSTDasar bikin class baru di sinilah semua fungsi buat ngatur tree dikumpulin.
+7. def init self ini fungsi setingan awal pas objek dari class BSTDasar dibikin pertama kali.
+8. self root sama dengan None ngeset akar tree atau root nya jadi kosong pas program jalan awal.
+9. def insert node self root key bikin fungsi buat nambahin node baru secara rekursif.
+10. if root is None dicek dulu nih kalau posisi yang lagi dicek ternyata masih kosong.
+11. return Node key maka dibikinlah node baru di posisi yang kosong itu.
+12. if key lebih kecil root key kalau angka yang mau dimasukin lebih kecil dari node saat ini.
+13. root left sama dengan self insert node root left key datanya dilempar ke cabang kiri buat diproses lagi.
+14. elif key lebih besar root key tapi kalau angkanya ternyata lebih gede dari node saat ini.
+15. root right sama dengan self insert node root right key datanya dilempar ke cabang kanan buat diproses ke bawah.
+16. return root ngasih balik nilai root biar struktur tree nya tetap nyambung dari atas ke bawah.
+17. def insert self key ini fungsi insert utama yang bakal dipanggil dari luar class biar simpel.
+18. self root sama dengan self insert node self root key fungsi ini manggil fungsi rekursif di atas dan mulainya dari root.
+19. def search node self root key bikin fungsi buat nyari data secara rekursif.
+20. if root is None kalau node yang lagi dicek ternyata kosong.
+21. return False berarti datanya emang gak ada jadi balikin nilai False.
+22. if root key sama dengan sama dengan key kalau angka di node saat ini sama persis kayak angka yang dicari.
+23. return True berarti datanya ketemu dan balikin nilai True.
+24. if key lebih kecil root key kalau angka yang dicari lebih kecil dari node saat ini.
+25. return self search node root left key lanjutin pencariannya ke cabang sebelah kiri.
+26. return self search node root right key kalau angkanya lebih gede lanjutin pencariannya ke cabang sebelah kanan.
+27. def search self key fungsi search utama yang gampang dipanggil dari program tanpa parameter root.
+28. return self search node self root key tugasnya cuma manggil fungsi search node dari ujung akar.
+29. def inorder self root bikin fungsi buat nampilin isi tree baca dari kiri cetak baru ke kanan.
+30. if root is None kalau node nya kosong.
+31. return keluar aja dari fungsi gak usah ngapa ngapain.
+32. self inorder root left telusuri dulu semua cabang sebelah kiri sampai mentok ke bawah.
+33. print root key end spasi terus cetak nilai node nya ke layar nyamping.
+34. self inorder root right habis itu baru telusuri cabang yang sebelah kanan.
+35. def preorder self root bikin fungsi nampilin tree cetak atasnya dulu baru kiri terus kanan.
+36. if root is None cek kalau node nya kosong.
+37. return selesaiin fungsi kalau node gak ada isinya.
+38. print root key end spasi cetak dulu nilai node yang lagi dicek sekarang ke layar.
+39. self preorder root left baru deh telusuri cabang kirinya.
+40. self preorder root right terus lanjut telusuri cabang kanannya.
+41. def postorder self root bikin fungsi nampilin tree telusuri kiri kanan baru cetak induknya.
+42. if root is None cek lagi kalau node nya kosong.
+43. return keluar dari fungsi kalau emang kosong.
+44. self postorder root left telusuri cabang kiri sampai mentok paling bawah.
+45. self postorder root right terus telusuri cabang kanannya.
+46. print root key end spasi terakhir baru cetak nilai node induknya ke layar.
+47. def find min self root bikin fungsi buat nyari angka paling kecil di dalam tree kita.
+48. if root is None cek dulu tree nya kosong apa nggak.
+49. return min satu kalau kosong balikin nilai min satu sebagai tanda datanya belum ada.
+50. current sama dengan root bikin variabel bantuan namanya current yang posisinya ditaruh di root.
+51. while current left is not None looping selama cabang kiri masih ada isinya.
+52. current sama dengan current left geser terus ke kiri soalnya nilai paling kecil ada di situ.
+53. return current key kalau udah mentok gak ada kiri lagi balikin nilai yang ada di posisi itu.
+54. def find max self root bikin fungsi buat nyari angka paling gede di tree.
+55. if root is None cek kalau tree lagi kosong.
+56. return min satu balikin nilai min satu kalau beneran kosong.
+57. current sama dengan root set variabel current mulai dari posisi root.
+58. while current right is not None looping selama cabang kanan masih ada isinya.
+59. current sama dengan current right geser terus ke kanan karena nilai terbesar ngumpul di situ.
+60. return current key balikin nilai posisinya kalau udah mentok di kanan.
+61. def count nodes self root bikin fungsi rekursif buat ngitung ada berapa total node di dalam tree.
+62. if root is None kalau node yang dicek kosong.
+63. return nol ngasih nilai nol soalnya gak ada node buat dihitung.
+64. return satu tambah self count nodes root left tambah self count nodes root right hitung satu untuk node saat ini terus tambahin total node kiri dan kanan.
+65. def sum nodes self root bikin fungsi buat ngejumlahin semua angka yang ada di tree.
+66. if root is None kalau node nya kosong.
+67. return nol kasih nilai nol ke hitungan.
+68. return root key tambah self sum nodes root left tambah self sum nodes root right tambahin nilai node sekarang dengan total angka cabang kiri dan kanan.
+69. def main ini fungsi utama tempat aplikasi SiToserba jalan pertama kali.
+70. sitoserba sama dengan BSTDasar kita bikin objek baru dari class BSTDasar dan disimpen ke variabel sitoserba.
+71. pilih sama dengan nol bikin variabel pilih buat nyimpen input menu diset nol dulu.
+72. while pilih tidak sama dengan empat looping terus terusan selama user belum milih angka empat buat keluar.
+73. print SiToserba Manajemen Stok cetak teks judul aplikasinya ke layar.
+74. print satu Tambah Kode Barang cetak menu teks nomor satu buat nambah barang.
+75. print dua Cari Kode Barang cetak menu teks nomor dua buat nyari barang.
+76. print tiga Tampilkan Info Stok cetak menu teks nomor tiga buat lihat info stok.
+77. print empat Keluar cetak menu teks nomor empat buat keluar.
+78. try mulai blok try except buat nangkep error kalau user masukin input selain angka.
+79. pilih sama dengan int input Pilih minta user masukin pilihan menu dan dipaksa jadi integer.
+80. except ValueError kalau ada error gara gara user masukin huruf.
+81. print Input tidak valid Masukkan angka cetak pesan peringatan ke user biar masukinnya bener.
+82. continue paksa program buat skip sisa kode di bawahnya dan balik lagi nampilin menu.
+83. if pilih sama dengan satu kalau user ngetik angka satu milih menu tambah barang.
+84. try siapin jebakan error lagi khusus buat proses input kode barang.
+85. x sama dengan int input Masukkan kode barang angka minta input kode barang ke user disimpen di variabel x.
+86. sitoserba insert x panggil fungsi insert di objek sitoserba buat masukin angkanya ke tree.
+87. print Kode barang x berhasil dimasukkan ke sistem tunjukin pesan sukses.
+88. except ValueError kalau user nginput huruf pas disuruh masukin kode barang.
+89. print Input tidak valid Masukkan angka kasih pesan error ke layar.
+90. elif pilih sama dengan dua kalau user milih menu nomor dua buat cari kode barang.
+91. try siapin jebakan error lagi buat proses pencarian barang.
+92. x sama dengan int input Cari kode barang minta user masukin angka kode barang yang mau dicari.
+93. if sitoserba search x cek datanya pakai fungsi search kalau hasilnya True.
+94. print Status Barang Ditemukan di Toko cetak pesan kalau barangnya beneran ada.
+95. else kalau hasil search nya False.
+96. print Status Barang Tidak Ada cetak pesan kalau barangnya emang gak ketemu.
+97. except ValueError tangkep error kalau user masukin karakter selain angka pas nyari.
+98. print Input tidak valid Masukkan angka tunjukin pesan error.
+99. elif pilih sama dengan tiga kalau user milih menu nomor tiga buat lihat info stok.
+100. print Kode barang terkecil sitoserba find min cetak teks info kode barang terkecil dari tree.
+101. print Kode barang terbesar sitoserba find max cetak teks info kode barang terbesar.
+102. print Total variasi barang di sistem sitoserba count nodes cetak jumlah total jenis barang.
+103. elif pilih sama dengan empat kalau user milih menu empat buat keluar dari program.
+104. print Program SiToserba selesai cetak ucapan perpisahan karena program berhenti.
+105. else kalau angka yang diketik user bukan satu dua tiga atau empat.
+106. print Pilihan tidak valid kasih tau ke user kalau menu yang dipilih gak ada.
+107. if name sama dengan main baris standar python buat mastiin program dijalankan sebagai file utama.
+108. main nah panggil fungsi main biar seluruh program kita mulai jalan.
 
 D. Output Program Penjelasan Output
 
