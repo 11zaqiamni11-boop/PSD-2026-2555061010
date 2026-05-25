@@ -123,10 +123,11 @@ Penjelasan kode per baris :
 107. if name sama dengan main baris standar python buat mastiin program dijalankan sebagai file utama.
 108. main nah panggil fungsi main biar seluruh program kita mulai jalan.
 
-D. Output Program Penjelasan Output
+D. Output Program 
 <img width="1919" height="931" alt="image" src="https://github.com/user-attachments/assets/2ff15c9e-926e-4a4f-9d2f-87e03e362e75" />
 <img width="1857" height="428" alt="image" src="https://github.com/user-attachments/assets/ae4696b3-80ae-4f53-bd5f-3b2cffaf9602" />
 
+Penjelasan Output:
 
 Saat kodingan ini di run, terminal bakal langsung nampilin judul "=== SiToserba: Manajemen Stok ===" sama 4 pilihan menu. Sistem bakal nunggu masukin angka. Misalnya , iseng masukin huruf A. Tapi udah ada try-except, jadi sistemnya nolak jadi nampilin: "Input tidak valid! Masukkan angka." terus otomatis balik nampilin menu lagi tanpa error atau force close.
 
