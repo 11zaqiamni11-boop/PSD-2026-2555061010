@@ -138,3 +138,5 @@ Buat ngebuktiin datanya beneran masuk, kita pilih menu 2 (Cari Kode Barang) dan 
 Selanjutnya, kalau mau liat rekap datanya, tinggal pilih menu 3 (Tampilkan Info Stok). Sistem bakal otomatis meluncur ke cabang mentok kiri buat dapet nilai terkecil, cabang mentok kanan buat nilai terbesar, dan ngitung semua node yang ada. Hasilnya langsung keluar kalau barang terkecilnya 30, terbesarnya 70, dan total jenis barangnya ada 3.
 
 Kalau udah kelar , tinggal pencet menu 4 (Keluar). Terminal bakal nampilin tulisan program selesai, perulangannya putus, dan aplikasinya berhenti dengan aman.
+
+E. link youtube https://youtu.be/m3smmYBVZms
