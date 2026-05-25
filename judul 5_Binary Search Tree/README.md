@@ -6,7 +6,7 @@ Program ini dibikin buat nyimulasiin sistem manajemen stok barang di toko (SiTos
 
 Kelebihan program ini cepet bener kalau mau nge-insert data baru atau nyari barang. Fitur utamanya ada tambah kode barang, cari status barang, sampai ngecek info stok seperti nyari kode barang paling kecil, paling gede, dan ngitung total jenis barang yang udah disimpen. Biar kodingannya tidak gampang error atau mati sendiri pas di-run gara-gara user salah ngetik huruf (padahal disuruhnya angka), di dalamnya udah dipasangin pengaman try-except. Kinerja program ini buat nyari data lumayan wush-wush alias O(log n), soalnya bisa langsung motong jalur pencarian jadi setengah tanpa harus ngecek datanya satu-satu dari awal.
 
-C. Source Code Penjelasan kode per baris
+C. Source Code 
 <img width="1919" height="955" alt="image" src="https://github.com/user-attachments/assets/ca0899c5-c6cf-4ed9-94f1-aa0ddc2b3cdb" />
 <img width="1919" height="839" alt="image" src="https://github.com/user-attachments/assets/2495eba8-c217-4a85-9aaf-cbe0e2d24df8" />
 <img width="1919" height="833" alt="image" src="https://github.com/user-attachments/assets/7b4b03ef-7069-4d9a-abaf-60d5fd72c890" />
