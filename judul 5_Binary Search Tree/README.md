@@ -2,9 +2,9 @@
 PROGRAM SITOSERBA: MANAJEMEN STOK PAKE STRUKTUR DATA BINARY SEARCH TREE (BST)
 
 B. Deskripsi Singkat
-Program ini dibikin buat nyimulasiin sistem manajemen stok barang di toko (SiToserba) pake kode barang bentuk angka. Penyimpanannya ini pake konsep Binary Search Tree (BST). Bayangin aja datanya itu kayak pohon yang bercabang ke bawah. Aturannya simpel: kalau kode barang yang baru masuk angkanya lebih kecil dari posisi data saat ini, dia bakal lari ke cabang kiri. Sebaliknya, kalau lebih gede, dia masuk ke cabang kanan.
+Program ini dibikin buat nyimulasiin sistem manajemen stok barang di toko (SiToserba) pake kode barang bentuk angka. Penyimpanannya ini pake konsep Binary Search Tree (BST). Bayangkan saja datanya itu kayak pohon yang bercabang ke bawah. Aturannya simpel: kalau kode barang yang baru masuk angkanya lebih kecil dari posisi data saat ini, dan bakal ke cabang kiri. Sebaliknya, kalau lebih gede, masuk ke cabang kanan.
 
-Kelebihan pake program ini tuh cepet banget kalau kita mau nge-insert data baru atau nyari barang. Fitur utamanya ada tambah kode barang, cari status barang, sampai ngecek info stok kayak nyari kode barang paling kecil, paling gede, dan ngitung total jenis barang yang udah disimpen. Biar kodingannya nggak gampang error atau mati sendiri pas di-run gara-gara user salah ngetik huruf (padahal disuruhnya angka), di dalamnya udah dipasangin pengaman try-except. Kinerja program ini buat nyari data lumayan wush-wush alias O(log n), soalnya dia bisa langsung motong jalur pencarian jadi setengah tanpa harus ngecek datanya satu-satu dari awal.
+Kelebihan program ini cepet bener kalau mau nge-insert data baru atau nyari barang. Fitur utamanya ada tambah kode barang, cari status barang, sampai ngecek info stok seperti nyari kode barang paling kecil, paling gede, dan ngitung total jenis barang yang udah disimpen. Biar kodingannya tidak gampang error atau mati sendiri pas di-run gara-gara user salah ngetik huruf (padahal disuruhnya angka), di dalamnya udah dipasangin pengaman try-except. Kinerja program ini buat nyari data lumayan wush-wush alias O(log n), soalnya bisa langsung motong jalur pencarian jadi setengah tanpa harus ngecek datanya satu-satu dari awal.
 
 C. Source Code Penjelasan kode per baris
 
@@ -82,12 +82,12 @@ Baris 121 sampai 122: if **name** == "**main**": - Ini sintaks wajib di Python b
 
 D. Output Program Penjelasan Output
 
-Pas kodingan ini baru di-run, terminal bakal langsung nampilin judul "=== SiToserba: Manajemen Stok ===" sama 4 pilihan menu. Sistem bakal nunggu kita masukin angka. Misalnya nih, kita iseng masukin huruf A. Untungnya udah ada try-except, jadi sistemnya nolak halus dan bilang: "Input tidak valid! Masukkan angka." terus otomatis balik nampilin menu lagi tanpa error apalagi force close.
+Saat kodingan ini di run, terminal bakal langsung nampilin judul "=== SiToserba: Manajemen Stok ===" sama 4 pilihan menu. Sistem bakal nunggu masukin angka. Misalnya , iseng masukin huruf A. Tapi udah ada try-except, jadi sistemnya nolak jadi nampilin: "Input tidak valid! Masukkan angka." terus otomatis balik nampilin menu lagi tanpa error atau force close.
 
-Terus, kita coba jalanin yang bener. Kita pilih menu 1 (Tambah Kode Barang), terus masukin angka 50. Program jawab: "Kode barang 50 berhasil dimasukkan ke sistem." Kita ulang lagi cara ini dua kali berturut-turut buat masukin angka 30 dan 70. Di balik layar, sistem udah otomatis ngejadiin angka 50 sebagai akar atau root, angka 30 masuk ke cabang sebelah kiri karena lebih kecil, dan angka 70 ke cabang sebelah kanan karena lebih gede.
+Terus, jalanin yang benernya. Pilih menu 1 (Tambah Kode Barang), terus masukin angka 50. Program nampilin: "Kode barang 50 berhasil dimasukkan ke sistem." Terus ulang lagi cara ini dua kali berturut-turut buat masukin angka 30 dan 70. Di balik layar, sistem udah otomatis ngejadiin angka 50 sebagai akar atau root, angka 30 masuk ke cabang sebelah kiri karena lebih kecil, dan angka 70 ke cabang sebelah kanan karena lebih gede.
 
-Buat ngebuktiin datanya beneran masuk, kita pilih menu 2 (Cari Kode Barang) dan nyari angka 30. Sistem bakal cepet banget nemuin dan nampilin tulisan: "Status: Barang Ditemukan di Toko!". Tapi pas kita iseng nyari angka 99 yang emang nggak pernah dimasukin, sistem langsung jawab: "Status: Barang Tidak Ada."
+Buat ngebuktiin datanya beneran masuk, kita pilih menu 2 (Cari Kode Barang) dan nyari angka 30. Sistem bakal cepet banget nemuin dan nampilin tulisan: "Status: Barang Ditemukan di Toko!". Tapi misal iseng nyari angka 99 yang emang nggak pernah dimasukin, sistem langsung jawab: "Status: Barang Tidak Ada."
 
 Selanjutnya, kalau mau liat rekap datanya, tinggal pilih menu 3 (Tampilkan Info Stok). Sistem bakal otomatis meluncur ke cabang mentok kiri buat dapet nilai terkecil, cabang mentok kanan buat nilai terbesar, dan ngitung semua node yang ada. Hasilnya langsung keluar kalau barang terkecilnya 30, terbesarnya 70, dan total jenis barangnya ada 3.
 
-Kalau udah kelar nyoba-nyoba, tinggal pencet menu 4 (Keluar). Terminal bakal nampilin tulisan program selesai, perulangannya putus, dan aplikasinya berhenti dengan aman.
+Kalau udah kelar , tinggal pencet menu 4 (Keluar). Terminal bakal nampilin tulisan program selesai, perulangannya putus, dan aplikasinya berhenti dengan aman.
