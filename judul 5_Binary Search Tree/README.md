@@ -139,4 +139,4 @@ Selanjutnya, kalau mau liat rekap datanya, tinggal pilih menu 3 (Tampilkan Info 
 
 Kalau udah kelar , tinggal pencet menu 4 (Keluar). Terminal bakal nampilin tulisan program selesai, perulangannya putus, dan aplikasinya berhenti dengan aman.
 
-E. link youtube https://youtu.be/m3smmYBVZms
+E. link youtube https://youtu.be/b1GOvZZHsNw
