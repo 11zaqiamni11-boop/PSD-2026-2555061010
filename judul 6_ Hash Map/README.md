@@ -132,6 +132,7 @@ D. Output Program
 <img width="1919" height="707" alt="image" src="https://github.com/user-attachments/assets/1e7c2d96-1aeb-4512-baec-decbfb2a88c4" />
 
 Penjelasan Output:
+
 Saat kodingan ini di-run, terminal bakal nampilin judul E-Livestock: Manajemen Kawanan Sapi sama 4 pilihan menu. Sistem bakal nunggu masukin angka. Misalnya, iseng masukin huruf A. Tapi udah ada try-except, jadi sistemnya nolak jadi nampilin: Input tidak valid! Masukkan angka. terus otomatis balik nampilin menu lagi tanpa error atau force close.
 
 Terus, jalanin yang benernya. Pilih menu 1 (Tambah Nomor Tag Sapi), terus masukin angka 50 (misalnya anak sapi baru lahir atau sapi Limosin baru datang). Program nampilin: Nomor tag sapi 50 berhasil dimasukkan ke sistem. Terus ulang lagi cara ini dua kali berturut-turut buat masukin angka 30 dan 70. Di balik layar, sistem udah otomatis ngejadiin angka 50 sebagai akar atau root, angka 30 masuk ke cabang sebelah kiri karena lebih kecil, dan angka 70 ke cabang sebelah kanan karena lebih gede.
