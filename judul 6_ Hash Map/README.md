@@ -142,3 +142,5 @@ Buat ngebuktiin datanya beneran masuk, pilih menu 2 (Cari Nomor Tag Sapi) dan ny
 Lanjut, kalau mau liat rekap datanya, tinggal pilih menu 3 (Tampilkan Info Populasi). Sistem bakal otomatis menuju ke cabang mentok kiri buat dapet nilai terkecil, cabang mentok kanan buat nilai terbesar, dan ngitung semua node yang ada. Hasilnya langsung keluar kalau tag sapi terkecilnya 30, terbesarnya 70, dan total populasinya ada 3 ekor.
 
 Kalau udah selesai, tinggal pencet menu 4 (Keluar). Terminal bakal nampilin tulisan program selesai, perulangannya putus, dan aplikasinya berhenti dengan aman.
+
+E.link you tube https://youtu.be/zfLjiTUWhFk
