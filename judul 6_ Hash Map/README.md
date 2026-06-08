@@ -10,6 +10,11 @@ Kelebihan program ini itu kalau mau nge-insert data ternak baru atau nyari rekam
 
 C. Source Code
 
+<img width="1919" height="995" alt="image" src="https://github.com/user-attachments/assets/97b66b66-e58c-4310-9ecd-c56a4fd0d759" />
+<img width="1919" height="834" alt="image" src="https://github.com/user-attachments/assets/9d88cced-b4d3-4549-a2aa-01c52d64536f" />
+<img width="1919" height="864" alt="image" src="https://github.com/user-attachments/assets/bbd2cf8e-3c6b-4b72-b172-62c59c7513c0" />
+<img width="1919" height="520" alt="image" src="https://github.com/user-attachments/assets/bd142def-4332-4276-bcd6-707d3377b2d1" />
+
 Penjelasan kode per baris:
 
 1. class Node: Mendefinisikan kelas Node sebagai representasi dasar dari sebuah simpul (titik data) di dalam struktur pohon.
