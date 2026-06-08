@@ -128,6 +128,9 @@ Penjelasan kode per baris:
 
 D. Output Program
 
+<img width="1919" height="997" alt="image" src="https://github.com/user-attachments/assets/06447154-99ce-4638-aba6-e790e8093225" />
+<img width="1919" height="707" alt="image" src="https://github.com/user-attachments/assets/1e7c2d96-1aeb-4512-baec-decbfb2a88c4" />
+
 Penjelasan Output:
 Saat kodingan ini di-run, terminal bakal nampilin judul E-Livestock: Manajemen Kawanan Sapi sama 4 pilihan menu. Sistem bakal nunggu masukin angka. Misalnya, iseng masukin huruf A. Tapi udah ada try-except, jadi sistemnya nolak jadi nampilin: Input tidak valid! Masukkan angka. terus otomatis balik nampilin menu lagi tanpa error atau force close.
 
