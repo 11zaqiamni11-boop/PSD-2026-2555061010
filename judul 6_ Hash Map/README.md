@@ -12,119 +12,119 @@ C. Source Code
 
 Penjelasan kode per baris:
 
-* class Node ini cetakan awal buat bikin kotak data di tree.
-* def init(self, key) ini fungsi bawaan buat ngatur nilai awal pas node baru dibuat.
-* self.key = key ini buat nyimpen angka nomor tag sapi ke dalam kotaknya.
-* self.left = None ini nyiapin dahan sebelah kiri yang awalnya dibikin kosong.
-* self.right = None ini nyiapin dahan sebelah kanan yang awalnya juga kosong.
-* class BSTDasar bikin class baru di sinilah semua fungsi buat ngatur tree dikumpulin.
-* def init(self) ini fungsi setingan awal pas objek dari class BSTDasar dibikin pertama kali.
-* self.root = None ngeset akar tree atau root nya jadi kosong pas program jalan awal.
-* def insert_node(self, root, key) bikin fungsi buat nambahin node baru secara rekursif.
-* if root is None dicek dulu nih kalau posisi yang lagi dicek ternyata masih kosong.
-* return Node(key) maka dibikinlah node baru di posisi yang kosong itu.
-* if key < root.key kalau angka yang mau dimasukin lebih kecil dari node saat ini.
-* root.left = self.insert_node(root.left, key) datanya dilempar ke cabang kiri buat diproses lagi.
-* elif key > root.key tapi kalau angkanya ternyata lebih gede dari node saat ini.
-* root.right = self.insert_node(root.right, key) datanya dilempar ke cabang kanan buat diproses ke bawah.
-* return root ngasih balik nilai root biar struktur tree nya tetap nyambung dari atas ke bawah.
-* def insert(self, key) ini fungsi insert utama yang bakal dipanggil dari luar class biar simpel.
-* self.root = self.insert_node(self.root, key) fungsi ini manggil fungsi rekursif di atas dan mulainya dari root.
-* def search_node(self, root, key) bikin fungsi buat nyari data secara rekursif.
-* if root is None kalau node yang lagi dicek ternyata kosong.
-* return False berarti datanya emang gak ada jadi balikin nilai False.
-* if root.key == key kalau angka di node saat ini sama persis kayak angka yang dicari.
-* return True berarti datanya ketemu dan balikin nilai True.
-* if key < root.key kalau angka yang dicari lebih kecil dari node saat ini.
-* return self.search_node(root.left, key) lanjutin pencariannya ke cabang sebelah kiri.
-* return self.search_node(root.right, key) kalau angkanya lebih gede lanjutin pencariannya ke cabang sebelah kanan.
-* def search(self, key) fungsi search utama yang gampang dipanggil dari program tanpa parameter root.
-* return self.search_node(self.root, key) tugasnya cuma manggil fungsi search node dari ujung akar.
-* def inorder(self, root) bikin fungsi buat nampilin isi tree baca dari kiri cetak baru ke kanan.
-* if root is None kalau node nya kosong.
-* return keluar aja dari fungsi gak usah ngapa ngapain.
-* self.inorder(root.left) telusuri dulu semua cabang sebelah kiri sampai mentok ke bawah.
-* print(root.key, end=" ") terus cetak nilai node nya ke layar nyamping.
-* self.inorder(root.right) habis itu baru telusuri cabang yang sebelah kanan.
-* def preorder(self, root) bikin fungsi nampilin tree cetak atasnya dulu baru kiri terus kanan.
-* if root is None cek kalau node nya kosong.
-* return selesaiin fungsi kalau node gak ada isinya.
-* print(root.key, end=" ") cetak dulu nilai node yang lagi dicek sekarang ke layar.
-* self.preorder(root.left) baru deh telusuri cabang kirinya.
-* self.preorder(root.right) terus lanjut telusuri cabang kanannya.
-* def postorder(self, root) bikin fungsi nampilin tree telusuri kiri kanan baru cetak induknya.
-* if root is None cek lagi kalau node nya kosong.
-* return keluar dari fungsi kalau emang kosong.
-* self.postorder(root.left) telusuri cabang kiri sampai mentok paling bawah.
-* self.postorder(root.right) terus telusuri cabang kanannya.
-* print(root.key, end=" ") terakhir baru cetak nilai node induknya ke layar.
-* def find_min(self, root) bikin fungsi buat nyari angka paling kecil di dalam tree kita.
-* if root is None cek dulu tree nya kosong apa nggak.
-* return -1 kalau kosong balikin nilai min satu sebagai tanda datanya belum ada.
-* current = root bikin variabel bantuan namanya current yang posisinya ditaruh di root.
-* while current.left is not None looping selama cabang kiri masih ada isinya.
-* current = current.left geser terus ke kiri soalnya nilai paling kecil ada di situ.
-* return current.key kalau udah mentok gak ada kiri lagi balikin nilai yang ada di posisi itu.
-* def find_max(self, root) bikin fungsi buat nyari angka paling gede di tree.
-* if root is None cek kalau tree lagi kosong.
-* return -1 balikin nilai min satu kalau beneran kosong.
-* current = root set variabel current mulai dari posisi root.
-* while current.right is not None looping selama cabang kanan masih ada isinya.
-* current = current.right geser terus ke kanan karena nilai terbesar ngumpul di situ.
-* return current.key balikin nilai posisinya kalau udah mentok di kanan.
-* def count_nodes(self, root) bikin fungsi rekursif buat ngitung ada berapa total node di dalam tree.
-* if root is None kalau node yang dicek kosong.
-* return 0 ngasih nilai nol soalnya gak ada node buat dihitung.
-* return 1 + self.count_nodes(root.left) + self.count_nodes(root.right) hitung satu untuk node saat ini terus tambahin total node kiri dan kanan.
-* def sum_nodes(self, root) bikin fungsi buat ngejumlahin semua angka yang ada di tree.
-* if root is None kalau node nya kosong.
-* return 0 kasih nilai nol ke hitungan.
-* return root.key + self.sum_nodes(root.left) + self.sum_nodes(root.right) tambahin nilai node sekarang dengan total angka cabang kiri dan kanan.
-* def main() ini fungsi utama tempat aplikasi E-Livestock jalan pertama kali.
-* peternakan = BSTDasar() kita bikin objek baru dari class BSTDasar dan disimpen ke variabel peternakan.
-* pilih = 0 bikin variabel pilih buat nyimpen input menu diset nol dulu.
-* while pilih != 4: looping terus terusan selama user belum milih angka empat buat keluar.
-* print(=== E-Livestock: Manajemen Kawanan Sapi ===) cetak teks judul aplikasinya ke layar.
-* print(1. Tambah Nomor Tag Sapi) cetak menu teks nomor satu buat nambah data sapi.
-* print(2. Cari Nomor Tag Sapi) cetak menu teks nomor dua buat nyari data sapi.
-* print(3. Tampilkan Info Populasi) cetak menu teks nomor tiga buat lihat info populasi.
-* print(4. Keluar) cetak menu teks nomor empat buat keluar.
-* try: mulai blok try except buat nangkep error kalau user masukin input selain angka.
-* pilih = int(input(Pilih: )) minta user masukin pilihan menu dan dipaksa jadi integer.
-* except ValueError: kalau ada error gara gara user masukin huruf.
-* print(Input tidak valid! Masukkan angka.) cetak pesan peringatan ke user biar masukinnya bener.
-* continue paksa program buat skip sisa kode di bawahnya dan balik lagi nampilin menu.
-* if pilih == 1: kalau user ngetik angka satu milih menu tambah data.
-* try: siapin jebakan error lagi khusus buat proses input nomor tag.
-* x = int(input(Masukkan nomor tag sapi (angka): )) minta input nomor tag ke user disimpen di variabel x.
-* peternakan.insert(x) panggil fungsi insert di objek peternakan buat masukin angkanya ke tree.
-* print(Nomor tag sapi {x} berhasil dimasukkan ke sistem.) tunjukin pesan sukses.
-* except ValueError: kalau user nginput huruf pas disuruh masukin nomor tag.
-* print(Input tidak valid! Masukkan angka.) kasih pesan error ke layar.
-* elif pilih == 2: kalau user milih menu nomor dua buat cari data sapi.
-* try: siapin jebakan error lagi buat proses pencarian.
-* x = int(input(Cari nomor tag sapi: )) minta user masukin angka tag sapi yang mau dicari.
-* if peternakan.search(x): cek datanya pakai fungsi search kalau hasilnya True.
-* print(Status: Sapi Terdaftar dan Ada di Kandang!) cetak pesan kalau sapinya beneran ada.
-* else: kalau hasil search nya False.
-* print(Status: Sapi Tidak Ditemukan dalam Data.) cetak pesan kalau sapinya emang gak ketemu.
-* except ValueError: tangkep error kalau user masukin karakter selain angka pas nyari.
-* print(Input tidak valid! Masukkan angka.) tunjukin pesan error.
-* elif pilih == 3: kalau user milih menu nomor tiga buat lihat info populasi.
-* print(Nomor tag terkecil (Paling Awal): {peternakan.find_min(peternakan.root)}) cetak teks info sapi paling lama dari tree.
-* print(Nomor tag terbesar (Paling Baru): {peternakan.find_max(peternakan.root)}) cetak teks info sapi terbaru.
-* print(Total populasi sapi di sistem: {peternakan.count_nodes(peternakan.root)}) cetak jumlah total populasi sapi.
-* elif pilih == 4: kalau user milih menu empat buat keluar dari program.
-* print(Program E-Livestock selesai.) cetak ucapan perpisahan karena program berhenti.
-* else: kalau angka yang diketik user bukan satu dua tiga atau empat.
-* print(Pilihan tidak valid!) kasih tau ke user kalau menu yang dipilih gak ada.
-* if **name** == "**main**": baris standar python buat mastiin program dijalankan sebagai file utama.
-* main() nah panggil fungsi main biar seluruh program kita mulai jalan.
+1. class Node: Mendefinisikan kelas Node sebagai representasi dasar dari sebuah simpul (titik data) di dalam struktur pohon.
+2. def init(self, key): Konstruktor kelas Node untuk menginisialisasi atribut pada saat objek simpul baru dibuat.
+3. self.key = key: Menyimpan nilai nomor identifikasi (tag) sapi ke dalam atribut key pada simpul tersebut.
+4. self.left = None: Menginisialisasi penunjuk (pointer) cabang kiri dengan nilai None atau kosong.
+5. self.right = None: Menginisialisasi penunjuk (pointer) cabang kanan dengan nilai None atau kosong.
+6. class BSTDasar: Mendefinisikan kelas utama BSTDasar yang memuat seluruh logika dan operasi algoritma Binary Search Tree.
+7. def init(self): Konstruktor untuk menginisialisasi struktur pohon pencarian biner saat pertama kali diinstansiasi.
+8. self.root = None: Menetapkan akar (root) pohon dengan nilai None, yang menandakan bahwa struktur pohon masih dalam keadaan kosong.
+9. def insert_node(self, root, key): Metode rekursif untuk menambahkan simpul baru ke dalam posisi yang tepat di dalam hierarki pohon.
+10. if root is None: Mengevaluasi kondisi batas (base case) di mana posisi simpul yang sedang diperiksa saat ini kosong.
+11. return Node(key): Mengembalikan objek Node baru yang berisi data nomor tag apabila kondisi posisi kosong terpenuhi.
+12. if key < root.key: Mengevaluasi apakah nilai yang akan dimasukkan lebih kecil dari nilai pada simpul saat ini.
+13. root.left = self.insert_node(root.left, key): Memanggil metode secara rekursif untuk menempatkan data pada percabangan sebelah kiri.
+14. elif key > root.key: Mengevaluasi apakah nilai yang akan dimasukkan lebih besar dari nilai pada simpul saat ini.
+15. root.right = self.insert_node(root.right, key): Memanggil metode secara rekursif untuk menempatkan data pada percabangan sebelah kanan.
+16. return root: Mengembalikan nilai referensi simpul saat ini untuk mempertahankan struktur referensi hierarki pohon.
+17. def insert(self, key): Metode antarmuka (interface) publik untuk menyederhanakan pemanggilan operasi penambahan data.
+18. self.root = self.insert_node(self.root, key): Memulai proses penambahan simpul dengan memanggil metode rekursif dari posisi akar pohon.
+19. def search_node(self, root, key): Metode rekursif untuk melakukan pencarian nilai tertentu di dalam struktur pohon secara efisien.
+20. if root is None: Mengevaluasi kondisi batas apabila penelusuran telah mencapai ujung pohon yang kosong.
+21. return False: Mengembalikan nilai boolean False yang mengindikasikan bahwa data tidak ditemukan di dalam struktur.
+22. if root.key == key: Mengevaluasi apakah nilai simpul saat ini sama persis dengan nilai yang sedang dicari.
+23. return True: Mengembalikan nilai boolean True yang mengindikasikan bahwa proses pencarian berhasil menemukan data.
+24. if key < root.key: Mengevaluasi apakah target nilai pencarian lebih kecil dari nilai simpul saat ini.
+25. return self.search_node(root.left, key): Mengarahkan penelusuran pencarian secara rekursif ke percabangan sebelah kiri.
+26. return self.search_node(root.right, key): Mengarahkan penelusuran pencarian secara rekursif ke percabangan sebelah kanan apabila nilainya lebih besar.
+27. def search(self, key): Metode antarmuka publik untuk memudahkan proses pencarian data tanpa parameter akar eksternal.
+28. return self.search_node(self.root, key): Memulai inisialisasi proses pencarian data mulai dari akar pohon.
+29. def inorder(self, root): Metode penelusuran (traversal) memori pohon menggunakan kaidah Inorder (Kiri, Induk, Kanan).
+30. if root is None: Memeriksa apakah simpul bernilai kosong untuk mencegah eksekusi berlebih pada fungsi rekursif.
+31. return: Menghentikan eksekusi prosedur pada tingkat rekursi saat ini tanpa mengembalikan nilai pengembalian.
+32. self.inorder(root.left): Menelusuri seluruh simpul yang berada pada sisi cabang kiri secara rekursif hingga batas terdalam.
+33. print(root.key, end= ): Mencetak nilai memori simpul saat ini ke layar secara horizontal.
+34. self.inorder(root.right): Melanjutkan penelusuran terhadap seluruh simpul yang berada pada cabang sebelah kanan.
+35. def preorder(self, root): Metode penelusuran memori pohon menggunakan standar algoritma Preorder (Induk, Kiri, Kanan).
+36. if root is None: Melakukan validasi eksistensi simpul untuk menghindari kesalahan komputasi pada memori kosong.
+37. return: Menginstruksikan metode untuk berhenti mengeksekusi baris kode berikutnya pada cabang kosong.
+38. print(root.key, end= ): Mencetak luaran nilai simpul induk terlebih dahulu sebelum melanjutkan penelusuran.
+39. self.preorder(root.left): Meneruskan penelusuran secara menyeluruh pada sisi kiri simpul anak.
+40. self.preorder(root.right): Meneruskan tahap penelusuran struktur pada bagian kanan simpul.
+41. def postorder(self, root): Metode komputasi penelusuran pohon menggunakan pendekatan algoritma Postorder (Kiri, Kanan, Induk).
+42. if root is None: Melakukan inspeksi keamanan untuk memastikan simpul saat ini berisi nilai referensi memori yang sah.
+43. return: Melakukan penghentian komputasi pada pemanggilan rekursif saat berhadapan dengan memori yang nihil.
+44. self.postorder(root.left): Memerintahkan sistem untuk melakukan penjelajahan penuh hingga ujung terdalam cabang kiri.
+45. self.postorder(root.right): Melakukan penjelajahan ekuivalen pada struktur cabang anak sisi kanan.
+46. print(root.key, end= ): Mencetak identitas memori induk setelah seluruh simpul anaknya selesai diproses.
+47. def find_min(self, root): Metode ekstraksi untuk mendapatkan nilai memori paling kecil (minimum) dalam struktur memori pohon.
+48. if root is None: Memvalidasi kondisi inisial untuk menjamin bahwa struktur pohon tidak dalam kondisi kosong sepenuhnya.
+49. return -1: Menghasilkan kode luaran negatif (-1) sebagai indikator galat yang menyatakan ketiadaan data.
+50. current = root: Mendeklarasikan variabel referensi current untuk melacak posisi simpul mulai dari tingkat akar.
+51. while current.left is not None: Memulai siklus perulangan terstruktur selama penunjuk bagian kiri masih memiliki referensi isi memori.
+52. current = current.left: Merelokasi titik evaluasi terus-menerus mengikuti rute penunjuk arah kiri.
+53. return current.key: Menghasilkan pemulangan nilai atribut simpul paling kiri yang merepresentasikan angka minimum data.
+54. def find_max(self, root): Fungsi struktural pencarian angka paling besar (maksimum) dari sekumpulan simpul dalam pohon data.
+55. if root is None: Menginstruksikan pemeriksaan eksistensi akar demi menjaga keandalan evaluasi data selanjutnya.
+56. return -1: Menyajikan kode resolusi galat -1 yang merepresentasikan entitas pohon dalam keadaan kosong.
+57. current = root: Menetapkan deklarasi pelacakan titik simpul awal di bagian puncak memori akar.
+58. while current.right is not None: Melangsungkan pengulangan pencarian sisi ekstrem selama dahan anak bagian kanan sah secara komputasional.
+59. current = current.right: Memigrasikan pemeriksaan data operasional menuju arah dahan ekstrem kanan secara persisten.
+60. return current.key: Mengekstraksi angka pengenal memori simpul posisi terkanan untuk menampilkan rekor nilai maksimum.
+61. def count_nodes(self, root): Prosedur analitik berbasis rekursi komputasi guna menghitung keseluruhan akumulasi simpul penyusun jaringan memori pohon.
+62. if root is None: Menerapkan mekanisme proteksi penelusuran untuk mengidentifikasi keberadaan memori referensi hampa pada pohon.
+63. return 0: Mengembalikan hasil evaluasi kuantitatif dasar bernilai nol dikarenakan ketiadaan penambahan simpul.
+64. return 1 + self.count_nodes(root.left) + self.count_nodes(root.right): Mengalkulasikan simpul komputasi saat ini ditambah pengumpulan rekursif kuantitas anak kiri dan sisi kanan.
+65. def sum_nodes(self, root): Modul operasi agragasi yang bertujuan merekapitulasi beban seluruh isi konstanta tiap node data.
+66. if root is None: Menegakkan uji awal agar algoritma tak terjebak melakukan ekstraksi kuantifikasi terhadap kekosongan node memori.
+67. return 0: Menyudahi penjumlahan bagian tersebut dengan menginjeksikan indeks nol demi melindungi total akumulasi hitungan.
+68. return root.key + self.sum_nodes(root.left) + self.sum_nodes(root.right): Mentotal akumulasi parameter isi node dengan penjumlahan berantai ke simpul sebelah kiri serta turunannya ke ujung kanan.
+69. def main(): Pendeklarasian fungsi pusat (main method) yang menjadi entitas inisialisasi titik mula eksekusi modul operasi ini.
+70. peternakan = BSTDasar(): Penginisialisasian (instansiasi) referensi kelas logis ke wujud memori aktual objek di variabel kerja.
+71. pilih = 0: Penyediaan penampung variabel alur logika yang diberikan beban awal nilai nol untuk persiapan perulangan sistem pilihan.
+72. while pilih != 4: Deklarasi penugasan berantai guna mewajibkan perputaran antarmuka konsol sebelum masukan akhir (4) divalidasi.
+73. print( E-Livestock: Manajemen Kawanan Sapi ): Mengeksekusi penulisan keterangan tajuk program operasional menuju media antarmuka.
+74. print(1. Tambah Nomor Tag Sapi): Mendesain tampilan referensi interaksi pengguna untuk perintah masukan input nomor individu baru.
+75. print(2. Cari Nomor Tag Sapi): Menampilkan parameter instruksional di bagian menu pelacakan identitas subjek tertentu di pangkalan memori.
+76. print(3. Tampilkan Info Populasi): Menyediakan menu tampilan analitik agregasi rangkuman status hierarki kumpulan data hewan komputasional.
+77. print(4. Keluar): Memberikan tampilan antarmuka interupsi memori untuk terminasi fungsional aplikasi tersebut secara normal.
+78. try: Mengawali area penjagaan lingkungan rentan masalah akibat masukan yang tidak menaati protokol operasi (eksepsi tipe memori).
+79. pilih = int(input(Pilih: )): Memanggil konsol guna penyerapan karakter angka yang nantinya akan dikonversi ke mode variabel bilangan asli.
+80. except ValueError: Mempertemukan lingkungan tangkapan jenis kegagalan pembacaan apabila format sandi angka tak sejalan.
+81. print(Input tidak valid! Masukkan angka.): Melahirkan pesan verifikasi teknis sebagai pedoman perbaikan ketidaksesuaian input pemakai instrumen.
+82. continue: Merestorasi pergerakan pengontrol siklus kembali menjangkau blok awal verifikasi tanpa membuat mesin program gagal (crash).
+83. if pilih == 1: Mengeksekusi filter komputasional terhadap permintaan pilihan modul satu untuk penambahan identitas data.
+84. try: Menjalankan perlindungan pemrosesan dari kesalahan tipe karakter ketika konsol meminta atribut numerik nomor hewan.
+85. x = int(input(Masukkan nomor tag sapi (angka): )): Melakukan inisiasi fungsi pemasukan terminal, lalu segera melakukan konversi identitas masukan menjadi jenis integer.
+86. peternakan.insert(x): Menerapkan fungsi prosedur penyisipan modul agar pangkalan data BST menyerap referensi integer ke dalam struktur memori.
+87. print(Nomor tag sapi {x} berhasil dimasukkan ke sistem.): Mentransmisikan umpan balik positif pencetakan tanda keberhasilan pencatatan.
+88. except ValueError: Melakukan pemonitoran atas indikasi penyimpangan format teks huruf agar modul algoritma terhindar dari pemaksaan numerik.
+89. print(Input tidak valid! Masukkan angka.): Memberitahu pengguna bahwasanya konversi sistem tertunda dikarenakan parameter instruksi berupa angka tidak dipenuhi.
+90. elif pilih == 2: Menangani seleksi logika alternatif tatkala entitas sistem pengguna menargetkan akses nomor dua sebagai langkah interaksi berikutnya.
+91. try: Melingkupi baris sensitif operasional penelusuran supaya interupsi sintaks non-angka otomatis diredam oleh kurungan parameter pengaman.
+92. x = int(input(Cari nomor tag sapi: )): Memproses ekstraksi identitas variabel angka tujuan investigasi berdasarkan interaksi karakter konsol dari sistem klien.
+93. if peternakan.search(x): Memvalidasi respons sistem sesudah mekanisme penyisiran tereksekusi pada variabel numerik acuan dengan indikator luaran True.
+94. print(Status: Sapi Terdaftar dan Ada di Kandang!): Mendistribusikan penegasan pesan teknis jika hasil uji logis mengonfirmasi validitas posisi node termaksud.
+95. else: Menganalisis lintasan pemrograman seandainya instrumen logika search merespons status data numerik sebagai nilai mutlak False (negatif).
+96. print(Status: Sapi Tidak Ditemukan dalam Data.): Mencetak pernyataan keterangan tidak hadirnya indikator referensi identifikasi tersebut dari kolektibilitas struktur pohon hierarki.
+97. except ValueError: Memonitor peluang munculnya eror akibat pengalihan interupsi tipe nilai data yang luput dari identifikasi karakter masukan bilangan bulat numerik.
+98. print(Input tidak valid! Masukkan angka.): Menyuguhkan peringatan komputasional guna menyesuaikan tipe data karakter agar sejalan dengan kriteria pencarian operasi algoritma sistem memori terstruktur.
+99. elif pilih == 3: Mengimplementasikan penyaringan instruksi ketika kondisi bernilai absolut menunjukkan arah penelusuran operasi rekapitulasi data (seleksi menu 3).
+100. print(Nomor tag terkecil (Paling Awal): {peternakan.find_min(peternakan.root)}): Merangkai penggabungan perintah pemanggilan metode nilai atribut terkecil serta membingkai hasil keluarannya pada konsol.
+101. print(Nomor tag terbesar (Paling Baru): {peternakan.find_max(peternakan.root)}): Menginisiasi instruksi untuk menyerap nilai luaran batas puncak simpul referensi maksimal lalu diekstraksi ke antarmuka layar pengguna.
+102. print(Total populasi sapi di sistem: {peternakan.count_nodes(peternakan.root)}): Menyalurkan parameter instruksional prosedur penotalan seluruh atribut titik memori dan ditranskripsikan ke dalam visual rekapitulasi total keseluruhan sapi.
+103. elif pilih == 4: Melakukan proses inspeksi bersyarat pada perintah rute keempat sebagai representasi terminasi lingkungan kerja.
+104. print(Program E-Livestock selesai.): Merilis respons penutupan aktivitas pemrosesan guna menginformasikan kepada pengguna bahwa rutinitas sistem secara aman telah direduksi untuk berhenti.
+105. else: Melingkupi penanganan penyimpangan di segala kondisi numerik apabila opsi input gagal mencocokkan rentang menu rasional operasi pilihan.
+106. print(Pilihan tidak valid!): Mentransmisikan instruksi penegasan kepada pengguna mengenai batasan akses fungsionalitas ketika karakter di luar matriks ketentuan menu operasi diterapkan.
+107. if name == main: Blok instruksi kondisional terstandar pada bahasa pemrograman Python guna memverifikasi bahwasanya file instruksi sedang dijalankan independen, bukan proses pemanggilan (import) pustaka.
+108. main(): Menyelesaikan rangkaian operasi dengan mengaktifkan resolusi blok kode fungsi mula, membangkitkan eksekusi fungsionalitas skrip pengolahan program dari titik referensi utama.
 
 D. Output Program
 
 Penjelasan Output:
-Saat kodingan ini di-run, terminal bakal nampilin judul === E-Livestock: Manajemen Kawanan Sapi === sama 4 pilihan menu. Sistem bakal nunggu masukin angka. Misalnya, iseng masukin huruf A. Tapi udah ada try-except, jadi sistemnya nolak jadi nampilin: Input tidak valid! Masukkan angka. terus otomatis balik nampilin menu lagi tanpa error atau force close.
+Saat kodingan ini di-run, terminal bakal nampilin judul E-Livestock: Manajemen Kawanan Sapi sama 4 pilihan menu. Sistem bakal nunggu masukin angka. Misalnya, iseng masukin huruf A. Tapi udah ada try-except, jadi sistemnya nolak jadi nampilin: Input tidak valid! Masukkan angka. terus otomatis balik nampilin menu lagi tanpa error atau force close.
 
 Terus, jalanin yang benernya. Pilih menu 1 (Tambah Nomor Tag Sapi), terus masukin angka 50 (misalnya anak sapi baru lahir atau sapi Limosin baru datang). Program nampilin: Nomor tag sapi 50 berhasil dimasukkan ke sistem. Terus ulang lagi cara ini dua kali berturut-turut buat masukin angka 30 dan 70. Di balik layar, sistem udah otomatis ngejadiin angka 50 sebagai akar atau root, angka 30 masuk ke cabang sebelah kiri karena lebih kecil, dan angka 70 ke cabang sebelah kanan karena lebih gede.
 
